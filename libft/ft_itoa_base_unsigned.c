@@ -6,12 +6,13 @@
 /*   By: ihuang <ihuang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/15 22:19:10 by ihuang            #+#    #+#             */
-/*   Updated: 2018/11/19 10:10:49 by ihuang           ###   ########.fr       */
+/*   Updated: 2018/12/01 14:41:43 by ihuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
+
 static int		ft_digits_unsigned(unsigned long long int nbr, int base)
 {
 	int		digits;

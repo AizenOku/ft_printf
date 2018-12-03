@@ -6,7 +6,7 @@
 /*   By: ihuang <ihuang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 09:38:21 by ihuang            #+#    #+#             */
-/*   Updated: 2018/11/19 08:44:38 by ihuang           ###   ########.fr       */
+/*   Updated: 2018/12/03 10:54:18 by ihuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		call_handler(t_flags *flags, va_list list)
 {
-	static func_ptr func_list[13] = {
+	static t_func_ptr func_list[13] = {
 		&handle_c,
 		&handle_s,
 		&handle_p,
@@ -23,7 +23,7 @@ int		call_handler(t_flags *flags, va_list list)
 		&handle_o,
 		&handle_u,
 		&handle_x,
-		&handle_X,
+		&handle_bigx,
 		&handle_f,
 		&handle_o,
 		&handle_percent,
@@ -54,8 +54,7 @@ int		parse_format(const char *fmt, va_list list, t_flags *flags)
 			if (*++fmt == '\0')
 				return (count);
 			get_flags(&fmt, flags);
-			// print_flags(flags);
-			if (flags->type  != -1)
+			if (flags->type != -1)
 				count += call_handler(flags, list);
 			initiate_flags(&flags);
 		}

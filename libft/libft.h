@@ -6,7 +6,7 @@
 /*   By: ihuang <ihuang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/11 16:12:58 by ihuang            #+#    #+#             */
-/*   Updated: 2018/11/19 10:42:28 by ihuang           ###   ########.fr       */
+/*   Updated: 2018/12/01 14:43:43 by ihuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,8 @@ char				*ft_itoa_base(int n, int b);
 void				ft_tabdel(char **tab);
 int					ft_strindex(const char *s, const char c);
 char				*ft_itoa_base_ptr(unsigned long n, int b);
-char				*ft_itoa_base_unsigned(unsigned long long int nbr, int base);
+char				*ft_itoa_base_unsigned(unsigned long long int nbr, \
+int base);
 char				*ft_llitoa(long long int n);
 
 #endif

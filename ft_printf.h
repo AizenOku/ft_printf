@@ -6,7 +6,7 @@
 /*   By: ihuang <ihuang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 09:41:44 by ihuang            #+#    #+#             */
-/*   Updated: 2018/11/29 23:09:41 by ihuang           ###   ########.fr       */
+/*   Updated: 2018/12/03 10:10:01 by ihuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,18 @@ typedef struct	s_flags
 	char		l;
 	char		hh;
 	char		h;
-	char		L;
+	char		bigl;
 	int			type;
 }				t_flags;
 
-typedef int 	(*func_ptr)(t_flags *flags, va_list list);
+typedef int		(*t_func_ptr)(t_flags *flags, va_list list);
 
 void			get_nbr_and_str_di(t_flags *flags, \
 long long int *nbr, char **str, va_list list);
-void			get_nbr_and_str_ouxX(t_flags *flags, char **str, va_list list);
+void			get_nbr_and_str_oux(t_flags *flags, char **str, va_list list);
 void			get_prepend(char *prepend, t_flags *flags, long long int nbr);
-void			get_prepend_double(char **int_str, char *prepend, t_flags *flags);
+void			get_prepend_double(char **int_str, \
+		char *prepend, t_flags *flags);
 
 int				call_handler(t_flags *flags, va_list list);
 int				handle_s(t_flags *flags, va_list list);
@@ -57,7 +58,7 @@ int				handle_d(t_flags *flags, va_list list);
 int				handle_o(t_flags *flags, va_list list);
 int				handle_u(t_flags *flags, va_list list);
 int				handle_x(t_flags *flags, va_list list);
-int				handle_X(t_flags *flags, va_list list);
+int				handle_bigx(t_flags *flags, va_list list);
 int				handle_f(t_flags *flags, va_list list);
 int				handle_percent(t_flags *flags, va_list list);
 
@@ -69,7 +70,6 @@ void			set_width_and_prec(const char **fmt, t_flags *flags);
 
 int				ft_printf(const char *restrict format, ...);
 int				parse_format(const char *fmt, va_list list, t_flags *flags);
-void			print_flags(t_flags *flags);
 
 int				ft_write(const char *fmt);
 void			write_padding(int spaces, char c);
@@ -79,7 +79,9 @@ double			double_pow(double nbr, int times);
 
 double			get_intstr_and_frac(long double nbr, char **int_str, int isneg);
 int				get_fracstr_and_carryover(double frac_part, \
-		char **frac_str, int prec);
+		char **frac_str, char **int_str, int prec);
+void			join_int_frac_strings(char **int_str, char **frac_str);
+int				tie_to_even(char **int_str, char **frac_str);
 int				increment_str(char **str, char type);
 long double		get_doublenbr(t_flags *flags, va_list list);
 int				print_intstr(char prepend, char *int_str, t_flags *flags);

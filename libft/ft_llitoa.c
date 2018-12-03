@@ -6,7 +6,7 @@
 /*   By: ihuang <ihuang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/08 17:56:56 by ihuang            #+#    #+#             */
-/*   Updated: 2018/11/19 11:06:49 by ihuang           ###   ########.fr       */
+/*   Updated: 2018/12/03 11:07:24 by ihuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ static void		fill_ptr(char **ptr, unsigned long long l, long long int n)
 	i = 0;
 	if (n == 0)
 	{
+		free(*ptr);
 		*ptr = ft_strdup("0");
 		return ;
 	}

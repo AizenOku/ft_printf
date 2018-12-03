@@ -6,7 +6,7 @@
 /*   By: ihuang <ihuang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 19:32:45 by ihuang            #+#    #+#             */
-/*   Updated: 2018/11/28 02:22:26 by ihuang           ###   ########.fr       */
+/*   Updated: 2018/12/01 14:49:12 by ihuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int		handle_percent(t_flags *flags, va_list list)
 	int				spaces;
 
 	check_stars(flags, list);
-	c = '%'; 
+	c = '%';
 	spaces = flags->width - 1;
 	if (spaces > 0)
 	{
@@ -51,7 +51,7 @@ int		handle_percent(t_flags *flags, va_list list)
 	}
 	else
 		write(1, &c, 1);
-	return (MAX(flags->width, 1));	
+	return (MAX(flags->width, 1));
 }
 
 int		handle_s(t_flags *flags, va_list list)
@@ -93,7 +93,7 @@ int		handle_p(t_flags *flags, va_list list)
 	ptr = va_arg(list, void*);
 	str = ft_itoa_base_ptr((unsigned long)ptr, 16);
 	slen = ft_strlen(str);
-	spaces = flags->width - slen;	
+	spaces = flags->width - slen;
 	if (spaces > 0)
 	{
 		if (!flags->minus)
@@ -107,4 +107,3 @@ int		handle_p(t_flags *flags, va_list list)
 	free(str);
 	return (MAX(slen, flags->width));
 }
-

@@ -6,7 +6,7 @@
 /*   By: ihuang <ihuang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/17 12:23:34 by ihuang            #+#    #+#             */
-/*   Updated: 2018/11/19 17:33:16 by ihuang           ###   ########.fr       */
+/*   Updated: 2018/12/03 10:08:18 by ihuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int		handle_o(t_flags *flags, va_list list)
 	int				plen;
 
 	check_stars(flags, list);
-	get_nbr_and_str_ouxX(flags, &str, list);
+	get_nbr_and_str_oux(flags, &str, list);
 	slen = (int)ft_strlen(str);
 	get_prepend(&prepend, flags, 0);
 	plen = (prepend && *str && *str != '0') ? 1 : 0;
@@ -60,7 +60,7 @@ int		handle_o(t_flags *flags, va_list list)
 		write(1, &prepend, 1);
 	if (flags->prec == -1 && flags->zero && !flags->minus)
 		write_padding(spaces, '0');
-	else if (flags->prec - slen - plen> 0)
+	else if (flags->prec - slen - plen > 0)
 		write_padding(flags->prec - slen - plen, '0');
 	ft_putstr(str);
 	if (flags->minus)
@@ -77,7 +77,7 @@ int		handle_u(t_flags *flags, va_list list)
 	int				spaces;
 
 	check_stars(flags, list);
-	get_nbr_and_str_ouxX(flags, &str, list);
+	get_nbr_and_str_oux(flags, &str, list);
 	slen = (int)ft_strlen(str);
 	get_prepend(&prepend, flags, 0);
 	spaces = flags->width - MAX(flags->prec, slen) - (prepend != 0);
@@ -105,7 +105,7 @@ int		handle_x(t_flags *flags, va_list list)
 	int				spaces;
 
 	check_stars(flags, list);
-	get_nbr_and_str_ouxX(flags, &str, list);
+	get_nbr_and_str_oux(flags, &str, list);
 	prepend = (flags->hash) ? ft_strdup("0x") : NULL;
 	plen = (prepend && *str && *str != '0') ? 2 : 0;
 	slen = ft_strlen(str);
@@ -124,7 +124,7 @@ int		handle_x(t_flags *flags, va_list list)
 	return (MAX(flags->width, MAX(flags->prec, slen) + plen));
 }
 
-int		handle_X(t_flags *flags, va_list list)
+int		handle_bigx(t_flags *flags, va_list list)
 {
 	char			*str;
 	char			*prepend;
@@ -133,7 +133,7 @@ int		handle_X(t_flags *flags, va_list list)
 	int				spaces;
 
 	check_stars(flags, list);
-	get_nbr_and_str_ouxX(flags, &str, list);
+	get_nbr_and_str_oux(flags, &str, list);
 	prepend = (flags->hash) ? ft_strdup("0X") : NULL;
 	plen = (prepend && *str) ? 2 : 0;
 	slen = ft_strlen(str);
