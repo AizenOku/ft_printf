@@ -6,7 +6,7 @@
 /*   By: ihuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 10:57:34 by ihuang            #+#    #+#             */
-/*   Updated: 2018/11/15 11:01:02 by ihuang           ###   ########.fr       */
+/*   Updated: 2018/12/03 17:43:39 by ihuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,5 @@ int		ft_strindex(const char *s, const char c)
 			return (i);
 		i++;
 	}
-	if (c == '\0')
-		return (i);
 	return (-1);
 }

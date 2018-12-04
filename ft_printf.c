@@ -6,7 +6,7 @@
 /*   By: ihuang <ihuang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 09:38:21 by ihuang            #+#    #+#             */
-/*   Updated: 2018/12/03 10:54:18 by ihuang           ###   ########.fr       */
+/*   Updated: 2018/12/03 17:47:15 by ihuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int		call_handler(t_flags *flags, va_list list)
 		&handle_o,
 		&handle_u,
 		&handle_x,
-		&handle_bigx,
+		&handle_x,
 		&handle_f,
 		&handle_o,
 		&handle_percent,

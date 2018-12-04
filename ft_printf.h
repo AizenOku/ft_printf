@@ -6,7 +6,7 @@
 /*   By: ihuang <ihuang@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 09:41:44 by ihuang            #+#    #+#             */
-/*   Updated: 2018/12/03 10:10:01 by ihuang           ###   ########.fr       */
+/*   Updated: 2018/12/03 17:32:12 by ihuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ int				handle_d(t_flags *flags, va_list list);
 int				handle_o(t_flags *flags, va_list list);
 int				handle_u(t_flags *flags, va_list list);
 int				handle_x(t_flags *flags, va_list list);
-int				handle_bigx(t_flags *flags, va_list list);
 int				handle_f(t_flags *flags, va_list list);
 int				handle_percent(t_flags *flags, va_list list);
 

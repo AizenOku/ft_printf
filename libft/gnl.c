@@ -6,14 +6,14 @@
 /*   By: ihuang <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/17 11:21:06 by ihuang            #+#    #+#             */
-/*   Updated: 2018/11/15 12:27:59 by ihuang           ###   ########.fr       */
+/*   Updated: 2018/12/03 18:09:46 by ihuang           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "get_next_line.h"
 
-int		ft_new_line(char **s, char **line, const int fd, int br)
+static int	ft_new_line(char **s, char **line, const int fd, int br)
 {
 	char		*tmp;
 	int			len;
@@ -40,7 +40,7 @@ int		ft_new_line(char **s, char **line, const int fd, int br)
 	return (1);
 }
 
-int		gnl(const int fd, char **line)
+int			gnl(const int fd, char **line)
 {
 	static char	*s[4864];
 	char		buf[BUFF_SIZE + 1];
